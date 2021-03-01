@@ -20,7 +20,7 @@ namespace osu.Desktop
 {
     internal class DiscordRichPresence : Component
     {
-        private const string client_id = "367827983903490050";
+        private const string client_id = "815959846339477585";
 
         private DiscordRpcClient client;
 
@@ -36,7 +36,7 @@ namespace osu.Desktop
 
         private readonly RichPresence presence = new RichPresence
         {
-            Assets = new Assets { LargeImageKey = "osu_logo_lazer", }
+            Assets = new Assets { LargeImageKey = "osu_logo_lazer" }
         };
 
         [BackgroundDependencyLoader]
@@ -98,6 +98,10 @@ namespace osu.Desktop
             else
             {
                 presence.State = "Idle";
+                presence.Details = "v2021.301.0-Strayfade";
+                presence.Party.Max = 0;
+                presence.Party.Size = 0;
+                presence.Assets.LargeImageText = "Strayfade osu!lazer";
                 presence.Details = string.Empty;
             }
 
